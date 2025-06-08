@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open SMS Gateway Rest API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">Open SMS Gateway Rest API</h2>
+                <p class="text-center">This is a simple REST API for sending SMS messages.</p>
+            </div>
+        </div>
+
+        <form th:action="@{/sendSMS}" th:object="${outGoingMessage}"  method="post">
+
+            <div class="row">
+                <div class="offset-4 col-1">
+                    <label for="from">From:</label>
+                </div>
+                <div class="col-4">
+                    <input type="text" id="from" name="from" required>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="offset-4 col-1">
+                    <label for="to">To:</label>
+                </div>
+                <div class="col-4">
+                    <input type="text" id="to" name="to" required>
+                </div>
+
+            </div>
+
+            <div class="row mt-2">
+                <div class="offset-4 col-1">
+                    <label for="message">Message:</label>
+                </div>
+                <div class="col-4">
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+            </div>
+            <div class="row mt-2">
+                <div class="offset-5 col-2">
+                    <button class="btn btn-primary" type="submit">Send SMS</button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</body>
+</html>
